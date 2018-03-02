@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Vollkorn");
+
+body {
+  background-color: #F1ECCE;
+}
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 350px;
+  height: 500px;
+  text-align: center;
+}
+.card .hole {
+  background-color: #F1ECCE;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 15px;
+}
+.card .photo {
+  /* border-radius: 50%; */
+  width: 125px;
+  height: 125px;
+  /* overflow: hidden; */
+  display: inline-block;
+  position: relative;
+}
+.card .photo img {
+  width: 100%;
+  margin: auto;
+  border-radius: 50%;
+  opacity: 0.75;
+}
+.text {
+  margin: 0 15px;
+}
+p {
+  font-family: 'Vollkorn', serif;
+  color: #757B82;
+  line-height: 22px;
+}
+p.name {
+  font-size: 150%;
+}
+p a {
+  color: #605E60;
+}
+
+
+.icons {
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  width: 100%;
+  display: inline-block;
+}
+.icons a {
+  position: relative;
+  background-color: #fff;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid grey;
+  /* -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3); */
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 24px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.icons a:hover {
+  background-color: #333;
+  color: #fff;
+}
+.icons a i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Douglas Wu</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="card">
+    <div class="hole"></div>
+    <div class="photo">
+      <img src="profile.png" alt="Douglas Wu">
+    </div>
+    <div class="text">
+      <p class="name">Douglas Wu</p>
+      <p>Full-stack developer. Language enthusiast. Martial arts lover. Drummer.</p>
+      <p>@<a href="http://ckip.iis.sinica.edu.tw:8080/" target="_blank">CKIP Lab</a>, Academia Sinica, Taiwan</p>
+    </div>
+    <div class="icons">
+      <a href="https://www.facebook.com/douglas.wu.503" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/douglas-wu-091b5a114/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      <a href="https://github.com/douglaswu" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+      <a href="#" onclick="show()"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    </div>
+  </div>
+  <script>
+    String.prototype.decodeEscapeSequence = function() {
+      return this.replace(/([0-9A-Fa-f]{2})/g, function() {
+          return String.fromCharCode(parseInt(arguments[1], 16));
+      });
+    };
+    function show() {
+      var hex = '64677265793131313640676D61696C2E636F6D';
+      window.alert('Email: ' + hex.decodeEscapeSequence());
+    }
+  </script>
+</body>
+</html>
