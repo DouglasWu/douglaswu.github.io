@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Vollkorn");
+@import url("https://fonts.googleapis.com/css?family=Karla|Ovo");
 
 html, body {
   background-color: #F1ECCE;
@@ -7,6 +7,7 @@ html, body {
   height: 100%;
 }
 .wrapper {
+  position: relative;
   display: flex;
   min-height: 100%;
   align-items: center;
@@ -19,6 +20,11 @@ html, body {
   max-width: 100%;
   height: 500px;
   text-align: center;
+  transition: all 0.5s;
+}
+.card.expand {
+  width: 100vw;
+  height: 100vh;
 }
 .card .hole {
   background-color: #F1ECCE;
@@ -45,7 +51,7 @@ html, body {
   margin: 0 15px;
 }
 p {
-  font-family: 'Vollkorn', serif;
+  font-family: 'Ovo', serif;
   color: #757B82;
   line-height: 22px;
 }
@@ -56,11 +62,28 @@ p a {
   color: #605E60;
 }
 
+.about-btn {
+  border: 1px solid rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.5);
+  border-radius: 6px;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-top: 25px;
+  font-family: 'Karla', sans-serif;
+  transition: all 0.2s;
+}
+.about-btn:hover {
+  border-color: #4D92BC;
+  color: #4D92BC;
+}
 
 .icons {
   position: absolute;
   left: 0;
-  bottom: 40px;
+  bottom: 30px;
   width: 100%;
   display: inline-block;
 }
@@ -71,9 +94,8 @@ p a {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid grey;
-  /* -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.3); */
+  /* border: 1px solid grey; */
+
   display: inline-block;
   margin: 0 15px;
   font-size: 24px;
@@ -81,8 +103,8 @@ p a {
   transition: all 0.2s;
 }
 .icons a:hover {
-  background-color: #333;
-  color: #fff;
+  /* background-color: #333; */
+  color: #4D92BC;
 }
 .icons a i {
   position: absolute;
@@ -90,4 +112,9 @@ p a {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+
+.more {
+  display: none;
 }

@@ -8,41 +8,60 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="main.css">
+  <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="card">
+  <div class="wrapper" id="app">
+    <div class="card" :class="{ expand: expanded }">
       <div class="hole"></div>
       <div class="photo">
         <img src="profile.png" alt="Douglas Wu">
+        <!-- <img src="http://via.placeholder.com/125x125" /> -->
       </div>
       <div class="text">
-        <p class="name">Douglas Wu</p>
-        <p>Full-stack developer. Language enthusiast. Martial arts lover. Drummer.</p>
-        <p>@<a href="http://ckip.iis.sinica.edu.tw:8080/" target="_blank">CKIP Lab</a>, Academia Sinica, Taiwan</p>
+        <p class="name"><strong>Douglas Wu</strong></p>
+        <div class="brief">
+          <p>Full-stack developer. Language enthusiast. Martial arts lover. Drummer.</p>
+          <p>@<a href="http://ckip.iis.sinica.edu.tw:8080/" target="_blank">CKIP Lab</a>, <a href="https://www.sinica.edu.tw/ch" target="_blank">Academia Sinica</a>, Taiwan</p>
+        </div>
+        <div class="more">
+          bla bla
+        </div>
       </div>
+      <div class="about-btn" @click="expand()"　v-show="!expanded">About</div>
       <div class="icons">
         <a href="https://www.facebook.com/douglas.wu.503" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
         <a href="https://www.linkedin.com/in/douglas-wu-091b5a114/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
         <a href="https://github.com/douglaswu" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-        <a href="#" onclick="show()" id="mail-btn"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        <a href="#" @click="showEmail($event)" id="mail-btn"><i class="fa fa-envelope" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
-
   <script>
     String.prototype.decodeEscapeSequence = function() {
       return this.replace(/([0-9A-Fa-f]{2})/g, function() {
           return String.fromCharCode(parseInt(arguments[1], 16));
       });
     };
-    function show() {
-      var hex = '64677265793131313640676D61696C2E636F6D';
-      window.prompt("Email: ", hex.decodeEscapeSequence());
-    }
-    document.getElementById("mail-btn").addEventListener("click", function(event){
-      event.preventDefault()
+  </script>
+  <script type="text/javascript">
+    new Vue({
+      el: '#app',
+      methods: {
+        showEmail: function(e) {
+          e.preventDefault();
+          var hex = '64677265793131313640676D61696C2E636F6D';
+          window.prompt("Email: ", hex.decodeEscapeSequence());
+        },
+        expand: function() {
+          this.expanded = true;
+        }
+      },
+      data: {
+        expanded: false
+      }
     });
   </script>
+
 </body>
 </html>
